@@ -335,4 +335,51 @@
       }
     });
 
+
+  // ========== GLOBE JOURNEY CONTROLS ==========
+  const globeStage = $('#globeStage');
+  if (globeStage) {
+    const layers = $$('.globe-layer', globeStage);
+    const buttons = $$('.globe-btn', globeStage);
+    function setGlobeStep(step) {
+      layers.forEach(l => l.classList.toggle('is-active', Number(l.dataset.step) === step));
+      buttons.forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.step) === step)));
+    }
+    setGlobeStep(0);
+    buttons.forEach(btn => {
+      btn.addEventListener('click', () => setGlobeStep(Number(btn.dataset.step)));
+    });
+    // Auto-advance once when section enters view
+    if ('IntersectionObserver' in window && !reducedMotion) {
+      let autoPlayed = false;
+      const globeObs = new IntersectionObserver(entries => {
+        if (entries[0].isIntersecting && !autoPlayed) {
+          autoPlayed = true;
+          let s = 0;
+          const iv = setInterval(() => {
+            s++;
+            if (s > 3) { clearInterval(iv); return; }
+            setGlobeStep(s);
+          }, 1600);
+        }
+      }, { threshold: 0.4 });
+      globeObs.observe(globeStage);
+    }
+  }
+
+  // ========== MONUMENTS OPEN ON SCROLL ==========
+  const monumentCards = $$('.monument-card');
+  if (monumentCards.length && 'IntersectionObserver' in window) {
+    const monObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-open');
+          // optional: unobserve after open so it stays open
+          monObs.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
+    monumentCards.forEach(card => monObs.observe(card));
+  }
+
 })();
