@@ -48,7 +48,7 @@
 <a href="#monuments"><span>09</span> ჰერეთის ძეგლები</a>
 <a href="#saingilo"><span>10</span> საინგილო და საზღვრები</a>
 <div class="mobile-menu-note">ისტორია, რომელიც რუკაზე მეტია.</div>
-<a href="#journey">მდებარეობა / Journey</a><a href="#kings">მმართველები / Kings</a></div>
+</div>
 </div>
 <main aria-label="ჰერეთის ისტორიული მიმოხილვა" id="top">
 <section class="hero">
@@ -74,67 +74,69 @@
 </div>
 <div class="hero-bottom"><span>01 — 07</span><span class="scroll-cue">ჩამოსქროლე <i>↓</i></span><span>HERETI / GEORGIA</span></div>
 </section>
-<section aria-label="გეოგრაფიული მოგზაურობა ჰერეთამდე" class="globe-journey cinematic-section section-pad" id="journey">
+<section aria-label="გეოგრაფიული მოგზაურობა ჰერეთამდე" class="journey cinematic-section" id="journey">
 <div class="section-kicker reveal"><span>00</span> / მდებარეობა</div>
 <div class="heading-main reveal">
 <h2>დედამიწიდან<br/><i>ჰერეთამდე</i></h2>
 <p>ევროპიდან კავკასიამდე, საქართველოდან ისტორიულ ჰერეთამდე — სივრცის თანმიმდევრული მიახლოება.</p>
 </div>
-<div class="globe-stage" id="globeStage">
-<div class="globe-viewport">
-<div class="globe-layer layer-world" data-step="0">
-<div class="globe-sphere">
-<div class="globe-grid"></div>
-<div class="globe-land europe-highlight"></div>
-<div class="globe-marker" style="--x:58%;--y:32%"></div>
+<div class="journey-layout">
+<div class="journey-screen" id="journeyScreen">
+<div class="j-layer on" data-step="0">
+<div class="j-earth"><div class="j-pin"></div></div>
+<div class="j-label">ევროპა · კავკასიის მიმართულება</div>
 </div>
-<span class="globe-label">ევროპა · კავკასია</span>
-</div>
-<div class="globe-layer layer-caucasus" data-step="1">
-<div class="caucasus-map">
-<svg aria-hidden="true" viewbox="0 0 400 280">
-<path class="cauc-land" d="M40 140 Q80 60 160 50 Q240 40 320 70 Q360 100 370 160 Q350 220 280 250 Q180 270 90 240 Q40 200 40 140Z" fill="currentColor"></path>
-<circle class="focus-point" cx="270" cy="150" r="8"></circle>
-<text class="map-txt" x="250" y="175">საქართველო</text>
+<div class="j-layer" data-step="1">
+<svg aria-hidden="true" class="j-map" viewbox="0 0 400 280">
+<path class="land" d="M48 148 Q95 52 185 42 Q290 32 355 78 Q385 130 372 182 Q338 242 245 258 Q130 270 65 218 Q38 175 48 148Z"></path>
+<circle class="hot" cx="268" cy="152" r="10"></circle>
+<text x="245" y="182">საქართველო</text>
 </svg>
+<div class="j-label">კავკასია · საქართველო</div>
 </div>
-<span class="globe-label">კავკასია · საქართველო</span>
-</div>
-<div class="globe-layer layer-georgia" data-step="2">
-<div class="georgia-map">
-<svg aria-hidden="true" viewbox="0 0 420 300">
-<path class="geo-outline" d="M30 160 L70 80 L140 50 L220 40 L300 60 L360 100 L390 160 L370 220 L300 260 L200 280 L110 250 L50 200 Z" fill="currentColor" opacity=".25"></path>
-<path class="hereti-highlight" d="M260 90 L340 100 L360 150 L330 200 L270 210 L240 160 Z" fill="var(--lime)" opacity=".7"></path>
-<text class="map-txt lime" x="280" y="155">ჰერეთი</text>
-<text class="map-txt" x="140" y="140">საქართველო</text>
+<div class="j-layer" data-step="2">
+<svg aria-hidden="true" class="j-map" viewbox="0 0 420 300">
+<path class="land" d="M38 168 L82 78 L158 42 L248 34 L338 58 L392 118 L402 172 L368 228 L285 268 L175 282 L85 242 L42 192 Z"></path>
+<path class="hot" d="M252 92 L348 102 L368 152 L336 202 L262 212 L232 158 Z" opacity=".9"></path>
+<text x="140" y="148">საქართველო</text>
+<text fill="#b8f02e" font-weight="600" x="278" y="158">ჰერეთი</text>
 </svg>
+<div class="j-label">საქართველო · ჰერეთის არეალი</div>
 </div>
-<span class="globe-label">საქართველო · ჰერეთი</span>
-</div>
-<div class="globe-layer layer-hereti" data-step="3">
-<div class="hereti-focus">
-<div class="hereti-core">
-<span>ჰერეთი</span>
+<div class="j-layer" data-step="3">
+<div class="j-core">
+<div>
+<strong>ჰერეთი</strong>
 <small>მეხსიერების მიწა</small>
 </div>
-<div class="hereti-rivers">
-<span>ალაზანი</span>
-<span>იორი</span>
-<span>მტკვარი</span>
+</div>
+<div class="j-rivers">
+<span>ალაზანი</span><span>·</span><span>იორი</span><span>·</span><span>მტკვარი</span>
+</div>
+<div class="j-label">ისტორიული ჰერეთი</div>
 </div>
 </div>
-<span class="globe-label">ისტორიული ჰერეთი</span>
+<div class="j-steps" role="tablist">
+<button aria-current="true" class="j-btn" data-step="0" role="tab" type="button">
+<span class="j-num">01</span>
+<div><div class="j-title">ევროპა</div><div class="j-sub">კავკასიის მიმართულება</div></div>
+</button>
+<button class="j-btn" data-step="1" role="tab" type="button">
+<span class="j-num">02</span>
+<div><div class="j-title">კავკასია</div><div class="j-sub">საქართველო</div></div>
+</button>
+<button class="j-btn" data-step="2" role="tab" type="button">
+<span class="j-num">03</span>
+<div><div class="j-title">საქართველო</div><div class="j-sub">ჰერეთის არეალი</div></div>
+</button>
+<button class="j-btn" data-step="3" role="tab" type="button">
+<span class="j-num">04</span>
+<div><div class="j-title">ჰერეთი</div><div class="j-sub">ალაზანი · იორი · მტკვარი</div></div>
+</button>
 </div>
-</div>
-<div class="globe-controls">
-<button aria-pressed="true" class="globe-btn" data-step="0" type="button">ევროპა</button>
-<button class="globe-btn" data-step="1" type="button">კავკასია</button>
-<button class="globe-btn" data-step="2" type="button">საქართველო</button>
-<button class="globe-btn" data-step="3" type="button">ჰერეთი</button>
-</div>
-<p class="globe-note reveal">სქემატური მიახლოებაა. საზღვრები ეპოქების მიხედვით იცვლებოდა.</p>
 </div>
 </section>
+
 <section class="intro-strip section-pad cinematic-section">
 <div class="section-kicker reveal"><span>00</span> / კონტექსტი</div>
 <div class="intro-strip-copy reveal">
@@ -171,25 +173,20 @@
 <text class="map-center" x="330" y="240">ჰერეთი</text>
 <path d="M617 76 L617 119" stroke="#263629" stroke-width="2"></path><path d="M617 67 L610 81 L624 81 Z" fill="#263629"></path><text class="north-label" text-anchor="middle" x="617" y="57">N</text>
 <g aria-label="ალაზანი" class="map-point" role="button" tabindex="0">
-<circle cx="320" cy="210" fill="#d0ff3c" r="5"></circle>
-<text fill="#e8f0d4" font-size="11" x="335" y="206">ალაზანი</text>
-<text class="map-sub" fill="#8a9182" font-size="9" x="335" y="220">მდინარე</text>
+<circle cx="310" cy="200" r="6"></circle><text font-size="12" x="325" y="196">ალაზანი</text>
+<text font-size="9" opacity=".7" x="325" y="212">მდინარე</text>
 </g>
 <g aria-label="იორი" class="map-point" role="button" tabindex="0">
-<circle cx="280" cy="280" fill="#d0ff3c" r="5"></circle>
-<text fill="#e8f0d4" font-size="11" x="295" y="276">იორი</text>
-<text class="map-sub" fill="#8a9182" font-size="9" x="295" y="290">მდინარე</text>
+<circle cx="270" cy="275" r="6"></circle><text font-size="12" x="285" y="271">იორი</text>
+<text font-size="9" opacity=".7" x="285" y="287">მდინარე</text>
 </g>
-<g aria-label="თელავის მიდამოები" class="map-point" role="button" tabindex="0">
-<circle cx="410" cy="180" fill="#d0ff3c" r="5"></circle>
-<text fill="#e8f0d4" font-size="11" x="425" y="176">თელავი</text>
-<text class="map-sub" fill="#8a9182" font-size="9" x="425" y="190">მიდამოები</text>
+<g aria-label="თელავი" class="map-point" role="button" tabindex="0">
+<circle cx="400" cy="170" r="6"></circle><text font-size="12" x="415" y="166">თელავი</text>
+<text font-size="9" opacity=".7" x="415" y="182">მიდამოები</text>
 </g>
 <g aria-label="კახი" class="map-point" role="button" tabindex="0">
-<circle cx="500" cy="200" fill="#d0ff3c" r="5"></circle>
-<text fill="#e8f0d4" font-size="11" x="515" y="196">კახი</text>
-</g>
-</svg>
+<circle cx="490" cy="195" r="6"></circle><text font-size="12" x="505" y="199">კახი</text>
+</g></svg>
 <div class="map-legend"><span><i class="legend-territory"></i> ისტორიული არეალის სქემატური მონიშვნა</span><span><i class="legend-river"></i> მდინარეთა სისტემა</span></div>
 </div>
 <p class="map-disclaimer">სქემატური ილუსტრაციაა და არა ზუსტი ისტორიული საზღვრების რუკა. საზღვრების ინტერპრეტაცია წყაროებისა და ეპოქების მიხედვით განსხვავდება.</p>
@@ -272,45 +269,28 @@
 <article class="timeline-item reveal"><div class="timeline-year">853–854</div><div class="timeline-dot"></div><div class="timeline-card"><span>თბილისის აოხრება</span><h3>ბუღა თურქის ლაშქრობა</h3><p>ბუღა თურქმა თბილისი აიღო და გადაწვა, თუმცა რეგიონში არაბთა ადრინდელი გავლენის სრულად აღდგენა ვერ შეძლო.</p></div></article>
 </div>
 <p class="timeline-footnote reveal">ქრონოლოგია წარმოდგენილია საქართველოსა და ამიერკავკასიის საერთო პოლიტიკური ფონის საჩვენებლად. კონკრეტულად ჰერეთის ტერიტორიაზე მომხდარი მოვლენები დამატებით სპეციალურ წყაროებთან შეჯერებას საჭიროებს.</p>
-<div class="battle-block reveal" style="margin-top:48px">
-<div class="heading-main" style="margin-bottom:8px">
-<h3 style="font-size:clamp(22px,3vw,32px)">არაბთა ლაშქრობები<br/><i style="color:var(--lime);font-style:italic">სარდლები</i></h3>
+
+<div class="battle-box reveal">
+<div class="heading-main" style="margin-bottom:4px">
+<h3 style="font-size:clamp(22px,3vw,34px);margin:0 0 6px">არაბთა ლაშქრობები<br/><i style="color:var(--lime);font-style:italic;font-weight:400">სარდლები ორივე მხარეს</i></h3>
 </div>
-<p style="max-width:520px;color:#8a9182;font-size:14px;margin-bottom:8px">ქრონოლოგიიდან მოხსენიებული სარდლები და ძალები — სქემატური წარმოდგენა.</p>
-<div class="battle-schematic">
-<div class="battle-side">
+<p style="color:#8a9182;font-size:14px;max-width:520px;margin:0">ქრონოლოგიიდან მოხსენიებული სარდლები და ძალები.</p>
+<div class="battle-cols">
+<div class="battle-col">
 <h4>არაბთა მხარე</h4>
-<div class="commander arab">
-<strong>ჰაბიბ იბნ მასლამა</strong>
-<span>654–655 · გავლენის გაფართოება</span>
+<div class="cmd opp"><strong>ჰაბიბ იბნ მასლამა</strong><span>654–655 · გავლენის გაფართოება</span></div>
+<div class="cmd opp"><strong>მურვან ყრუ</strong><span>735–736 · დიდი ლაშქრობა</span></div>
+<div class="cmd opp"><strong>ბუღა თურქი</strong><span>853–854 · თბილისის აოხრება</span></div>
 </div>
-<div class="commander arab">
-<strong>მურვან ყრუ</strong>
-<span>735–736 · დიდი ლაშქრობა</span>
-</div>
-<div class="commander arab">
-<strong>ბუღა თურქი</strong>
-<span>853–854 · თბილისის აოხრება</span>
-</div>
-</div>
-<div class="battle-vs">VS</div>
-<div class="battle-side">
-<h4>ადგილობრივი / სხვა ძალები</h4>
-<div class="commander">
-<strong>ადგილობრივი მმართველები</strong>
-<span>ჰერეთი · ქართლი · მეზობელი სამთავროები</span>
-</div>
-<div class="commander">
-<strong>ბიზანტია და ხაზარები</strong>
-<span>685–697 · კონკურენტი ძალები</span>
-</div>
-<div class="commander">
-<strong>სერგი ბარნუკის ძე</strong>
-<span>ეგრისის მმართველი · 697 წ.</span>
+<div class="battle-mid"><div class="vs">VS</div></div>
+<div class="battle-col">
+<h4>ადგილობრივი და სხვა ძალები</h4>
+<div class="cmd"><strong>ადგილობრივი მმართველები</strong><span>ჰერეთი · ქართლი · მეზობელი სამთავროები</span></div>
+<div class="cmd"><strong>ბიზანტია და ხაზარები</strong><span>685–697 · კონკურენტი ძალები</span></div>
+<div class="cmd"><strong>სერგი ბარნუკის ძე</strong><span>ეგრისის მმართველი · 697 წ.</span></div>
 </div>
 </div>
 <p class="battle-note">ქრონოლოგია წარმოდგენილია საქართველოსა და ამიერკავკასიის საერთო პოლიტიკური ფონის საჩვენებლად. კონკრეტულად ჰერეთის ტერიტორიაზე მომხდარი მოვლენები დამატებით სპეციალურ წყაროებთან შეჯერებას საჭიროებს.</p>
-</div>
 </div>
 </section>
 <section class="section kingdom section-pad cinematic-section" id="kingdom">
@@ -331,51 +311,64 @@
 </div>
 <div class="title-quote reveal"><span>სამეფო ტიტულატურა</span><p>„მეფე ქართველთა, რანთა და კახთა“</p><small>ტიტულის ისტორიული გამოყენება სხვადასხვა მეფის ეპოქაში წყაროების მიხედვით უნდა განვიხილოთ.</small></div>
 </section>
-<section aria-label="ჰერეთის მეფეები და მმართველები" class="kings-section cinematic-section section-pad" id="kings">
-<div class="section-kicker reveal"><span>06</span> / პერსონაჟები</div>
+<section aria-label="ჰერეთის მმართველები" class="rulers cinematic-section" id="kings">
+<div class="section-kicker reveal"><span>06</span> / მმართველები</div>
 <div class="heading-main reveal">
-<h2>ჰერეთის<br/><i>მმართველები</i></h2>
-<p>წყაროებში მოხსენიებული მეფეები და დედოფლები — ტექსტში არსებული ცნობების მიხედვით.</p>
+<h2>ჰერეთის<br/><i>მეფეები და დედოფლები</i></h2>
+<p>წყაროებში მოხსენიებული პერსონაჟები — მხოლოდ საიტის ტექსტში არსებული ცნობების მიხედვით.</p>
 </div>
-<div class="kings-gallery">
-<article class="king-card-3d reveal">
-<div class="king-avatar">ჰ.</div>
+<div class="rulers-grid">
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">ლეგენდარული დამაარსებელი</div>
 <h3>ჰეროსი</h3>
-<div class="king-role">ლეგენდარული დამაარსებელი</div>
 <p>„მეფეთა ცხოვრების“ მიხედვით ჰეროსმა ააშენა ქალაქი ალაზანსა და მტკვარს შორის და მას „თუისი ჰერეთი“ უწოდა.</p>
+</div>
 </article>
-<article class="king-card-3d reveal">
-<div class="king-avatar">გ.</div>
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">მეფის ტიტული · IX ს.</div>
 <h3>გრიგოლ ჰამამი</h3>
-<div class="king-role">მეფის ტიტული</div>
 <p>ისტორიულ ლიტერატურაში ჰერეთის სამეფოდ ჩამოყალიბება გრიგოლ ჰამამის მეფის ტიტულთანაა დაკავშირებული.</p>
+</div>
 </article>
-<article class="king-card-3d reveal">
-<div class="king-avatar">დ.</div>
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">დედოფალი · X ს.</div>
 <h3>დედოფალი დინარი</h3>
-<div class="king-role">მართლმადიდებლური მიმართულება</div>
-<p>ისტორიულ თხრობაში დედოფალი დინარი და მისი ვაჟი დაკავშირებული არიან ჰერეთში ქალკედონური მიმართულების განმტკიცებასთან.</p>
+<p>ისტორიულ თხრობაში დედოფალი დინარი და მისი ვაჟი დაკავშირებული არიან ჰერეთში ქალკედონური — მართლმადიდებლური — მიმართულების განმტკიცებასთან.</p>
+</div>
 </article>
-<article class="king-card-3d reveal">
-<div class="king-avatar">ი.</div>
-<h3>მეფე იშხანიკი</h3>
-<div class="king-role">დინარის ვაჟი</div>
-<p>დედოფალ დინარასთან ერთად მოიხსენიება ჰერეთში ქრისტიანული აღმსარებლობის კონტექსტში.</p>
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">მეფე · დინარის ვაჟი</div>
+<h3>იშხანიკი</h3>
+<p>დედოფალ დინარასთან ერთად მოიხსენიება ჰერეთში ქრისტიანული აღმსარებლობისა და რეგიონის კულტურული კავშირების კონტექსტში.</p>
+</div>
 </article>
-<article class="king-card-3d reveal">
-<div class="king-avatar">კ.</div>
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">კახეთ-ჰერეთი · XI ს.</div>
 <h3>კვირიკე III</h3>
-<div class="king-role">კახეთ-ჰერეთი</div>
-<p>კვირიკე III-ის მმართველობისას კახეთ-ჰერეთი გაძლიერდა. მისი მეფობის დასასრულის თარიღად 1037 ან 1039 წელი გვხვდება.</p>
+<p>კვირიკე III-ის მმართველობისას კახეთ-ჰერეთი გაძლიერდა. მისი მეფობის დასასრულის თარიღად წყაროებსა და კვლევებში 1037 ან 1039 წელი გვხვდება.</p>
+</div>
 </article>
-<article class="king-card-3d reveal">
-<div class="king-avatar">ა.</div>
+<article class="ruler reveal">
+<div class="ruler-top"><div class="ruler-sil"></div></div>
+<div class="ruler-info">
+<div class="ruler-era">ბოლო მმართველი</div>
 <h3>აღსართან II</h3>
-<div class="king-role">ბოლო მმართველი</div>
-<p>ჰერელი დიდებულების მონაწილეობით აღსართან II ტახტიდან ჩამოაგდეს და კახეთ-ჰერეთი დავით IV-ის სამეფოს შეუერთდა.</p>
+<p>ჰერელი დიდებულების მონაწილეობით აღსართან II ტახტიდან ჩამოაგდეს და კახეთ-ჰერეთი დავით IV-ის სამეფოს შეუერთდა. ერწუხის ბრძოლამ გაერთიანების განმტკიცებას შეუწყო ხელი.</p>
+</div>
 </article>
 </div>
 </section>
+
 <section class="section faith section-pad cinematic-section" id="faith">
 <div class="faith-grid">
 <div class="faith-copy">
@@ -437,17 +430,17 @@
 <div class="section-heading"><div class="section-kicker reveal"><span>08</span> / მატერიალური მემკვიდრეობა</div><div class="heading-main reveal"><h2>ქვის არქივი<br/><i>ჰერეთის ძეგლები</i></h2><p>ტაძრები, ბაზილიკები და მცირე საყდრები — კულტურული მეხსიერების ფრაგმენტები.</p></div></div>
 <div class="monuments-intro reveal"><p>ჰერეთის ძეგლების დიდი ნაწილი ნანგრევების სახითაა შემორჩენილი. წარწერებისა და ზუსტი წერილობითი ცნობების სიმცირე, მრავალჯერადი ნგრევა-აღდგენა და ბუნებრივი პირობები ძეგლების დათარიღებას ართულებს. ამიტომ კვლევისთვის განსაკუთრებით მნიშვნელოვანია არქეოლოგიური მასალა და ხუროთმოძღვრული ანალიზი.</p><span>FIELD NOTES / 11 SITES</span></div>
 <div class="monuments-grid">
-<article class="monument-card reveal" data-monument="true"><span>01 / მონასტერი</span><h3>ლექართის წმინდა ნინოს კომპლექსი</h3><p>მნიშვნელოვანი ქრისტიანული და საგანმანათლებლო კერა. კომპლექსის ტერიტორიაზე რამდენიმე ეკლესიის ნანგრევია შემორჩენილი; წმინდა ნინოს ტაძარი 1310 წლის ოთხთავის ანდერძშიც მოიხსენიება.</p><b>წერილობითი მეხსიერება</b></article>
-<article class="monument-card reveal" data-monument="true"><span>02 / ბაზილიკა</span><h3>ყუმის ღვთისმშობლის ბაზილიკა</h3><p>VI–VII საუკუნეების ქართული მონუმენტური არქიტექტურის მნიშვნელოვანი ნიმუში. სამნავიანი გეგმით იგი ბოლნისისა და ვაზისუბნის ტაძრებს ენათესავება.</p><b>VI–VII საუკუნეები</b></article>
-<article class="monument-card reveal" data-monument="true"><span>03 / გუმბათოვანი ტაძარი</span><h3>ქურმუხის წმინდა გიორგი</h3><p>კახის მახლობლად, ქურმუხის ხეობაში მდებარე ტაძარი მრავალჯერ დაინგრა და აღდგა. მოწოდებული ტექსტის მიხედვით, XIX საუკუნის ბოლოს, 1894 წელს, კვლავ აღადგინეს.</p><b>კახის მიდამოები</b></article>
-<article class="monument-card reveal" data-monument="true"><span>04 / საყდარი</span><h3>კასრის სამება</h3><p>საყარაულოს მთაზე, კახის დასავლეთით მდებარე ძეგლი. ისტორიული ცნობით, მისი აგება VIII საუკუნეში მეფე არჩილს უკავშირდება; ნაგებობა არაერთხელ აღუდგენიათ.</p><b>VIII საუკუნის ტრადიცია</b></article>
-<article class="monument-card reveal" data-monument="true"><span>05 / მცირე ბაზილიკა</span><h3>ვაჩნაძიანთ მადლის ეკლესია</h3><p>ნურქილისას სახელითაც ცნობილი ეკლესია ბელაქნის მახლობლად მდებარეობს. ძირითადი ნაწილი XI–XII საუკუნეების მიჯნით თარიღდება, სამრეკლო კი მოგვიანებითაა მიშენებული.</p><b>XI–XII საუკუნეების მიჯნა</b></article>
-<article class="monument-card reveal" data-monument="true"><span>06 / აღდგენილი ტაძარი</span><h3>პატარა ალავერდი</h3><p>კახში მდებარე გუმბათოვანი ტაძარი ძველი უგუმბათო ბაზილიკის ადგილზე XIX საუკუნის ბოლოს, 1888 წელს, აღადგინეს.</p><b>1888 წლის აღდგენა</b></article>
-<article class="monument-card reveal" data-monument="true"><span>07 / საეკლესიო ცენტრი</span><h3>გიშის ღვთისმშობლის საყდარი</h3><p>გიშის წყლის ხეობაში მდებარე ტაძარი ისტორიულ წყაროებში ღვთისმშობლის სახელობის ეკლესიად მოიხსენიება. გიში დავით აღმაშენებლის ისტორიკოსისა და ვახუშტი ბაგრატიონის თხზულებებშიც გვხვდება.</p><b>ისტორიული წყაროები</b></article>
-<article class="monument-card reveal" data-monument="true"><span>08 / მაღალგუმბათოვანი</span><h3>ბახთალას ღვთისმშობლის ეკლესია</h3><p>ზეგამის, ძველი ჰერეთის სავაჭრო ცენტრის ტერიტორიაზე მდებარე მცირე ზომის მაღალგუმბათოვანი ნაგებობა ქართული აგურითაა აგებული.</p><b>ზეგამის ისტორიული სივრცე</b></article>
-<article class="monument-card reveal" data-monument="true"><span>09 / ადგილობრივი აღდგენა</span><h3>ნინოწმიდის ეკლესია</h3><p>ალიბეგლოს მახლობლად მდებარე ტაძარი მრავალჯერ დაინგრა და აღდგა. XIX საუკუნის შუა წლებში ადგილობრივმა მოსახლეობამ იგი საკუთარი სახსრებით განაახლა.</p><b>საზოგადოებრივი მეხსიერება</b></article>
-<article class="monument-card reveal" data-monument="true"><span>10 / სოფლის ტაძარი</span><h3>კახის წმინდა გიორგი</h3><p>კახ-ინგილოს ცენტრში მდებარე ეკლესია ძველი საყდრის ადგილზე XVIII საუკუნის პირველ ნახევარში აშენდა და XIX საუკუნის ბოლოს განახლდა.</p><b>XVIII–XIX საუკუნეები</b></article>
-<article class="monument-card reveal" data-monument="true"><span>11 / ქვის ეკლესია</span><h3>ძელი-ცხოველი</h3><p>მაწიმის წყლის ხეობაში მდებარე მცირე ქვის ეკლესიის სახელი ადრინდელი ხის ეკლესიის არსებობაზე მიანიშნებს. სამშენებლო ტექნიკის მიხედვით იგი XIV–XV საუკუნეებით თარიღდება.</p><b>XIV–XV საუკუნეები</b></article>
+<article class="monument-card reveal"><span>01 / მონასტერი</span><h3>ლექართის წმინდა ნინოს კომპლექსი</h3><p>მნიშვნელოვანი ქრისტიანული და საგანმანათლებლო კერა. კომპლექსის ტერიტორიაზე რამდენიმე ეკლესიის ნანგრევია შემორჩენილი; წმინდა ნინოს ტაძარი 1310 წლის ოთხთავის ანდერძშიც მოიხსენიება.</p><b>წერილობითი მეხსიერება</b></article>
+<article class="monument-card reveal"><span>02 / ბაზილიკა</span><h3>ყუმის ღვთისმშობლის ბაზილიკა</h3><p>VI–VII საუკუნეების ქართული მონუმენტური არქიტექტურის მნიშვნელოვანი ნიმუში. სამნავიანი გეგმით იგი ბოლნისისა და ვაზისუბნის ტაძრებს ენათესავება.</p><b>VI–VII საუკუნეები</b></article>
+<article class="monument-card reveal"><span>03 / გუმბათოვანი ტაძარი</span><h3>ქურმუხის წმინდა გიორგი</h3><p>კახის მახლობლად, ქურმუხის ხეობაში მდებარე ტაძარი მრავალჯერ დაინგრა და აღდგა. მოწოდებული ტექსტის მიხედვით, XIX საუკუნის ბოლოს, 1894 წელს, კვლავ აღადგინეს.</p><b>კახის მიდამოები</b></article>
+<article class="monument-card reveal"><span>04 / საყდარი</span><h3>კასრის სამება</h3><p>საყარაულოს მთაზე, კახის დასავლეთით მდებარე ძეგლი. ისტორიული ცნობით, მისი აგება VIII საუკუნეში მეფე არჩილს უკავშირდება; ნაგებობა არაერთხელ აღუდგენიათ.</p><b>VIII საუკუნის ტრადიცია</b></article>
+<article class="monument-card reveal"><span>05 / მცირე ბაზილიკა</span><h3>ვაჩნაძიანთ მადლის ეკლესია</h3><p>ნურქილისას სახელითაც ცნობილი ეკლესია ბელაქნის მახლობლად მდებარეობს. ძირითადი ნაწილი XI–XII საუკუნეების მიჯნით თარიღდება, სამრეკლო კი მოგვიანებითაა მიშენებული.</p><b>XI–XII საუკუნეების მიჯნა</b></article>
+<article class="monument-card reveal"><span>06 / აღდგენილი ტაძარი</span><h3>პატარა ალავერდი</h3><p>კახში მდებარე გუმბათოვანი ტაძარი ძველი უგუმბათო ბაზილიკის ადგილზე XIX საუკუნის ბოლოს, 1888 წელს, აღადგინეს.</p><b>1888 წლის აღდგენა</b></article>
+<article class="monument-card reveal"><span>07 / საეკლესიო ცენტრი</span><h3>გიშის ღვთისმშობლის საყდარი</h3><p>გიშის წყლის ხეობაში მდებარე ტაძარი ისტორიულ წყაროებში ღვთისმშობლის სახელობის ეკლესიად მოიხსენიება. გიში დავით აღმაშენებლის ისტორიკოსისა და ვახუშტი ბაგრატიონის თხზულებებშიც გვხვდება.</p><b>ისტორიული წყაროები</b></article>
+<article class="monument-card reveal"><span>08 / მაღალგუმბათოვანი</span><h3>ბახთალას ღვთისმშობლის ეკლესია</h3><p>ზეგამის, ძველი ჰერეთის სავაჭრო ცენტრის ტერიტორიაზე მდებარე მცირე ზომის მაღალგუმბათოვანი ნაგებობა ქართული აგურითაა აგებული.</p><b>ზეგამის ისტორიული სივრცე</b></article>
+<article class="monument-card reveal"><span>09 / ადგილობრივი აღდგენა</span><h3>ნინოწმიდის ეკლესია</h3><p>ალიბეგლოს მახლობლად მდებარე ტაძარი მრავალჯერ დაინგრა და აღდგა. XIX საუკუნის შუა წლებში ადგილობრივმა მოსახლეობამ იგი საკუთარი სახსრებით განაახლა.</p><b>საზოგადოებრივი მეხსიერება</b></article>
+<article class="monument-card reveal"><span>10 / სოფლის ტაძარი</span><h3>კახის წმინდა გიორგი</h3><p>კახ-ინგილოს ცენტრში მდებარე ეკლესია ძველი საყდრის ადგილზე XVIII საუკუნის პირველ ნახევარში აშენდა და XIX საუკუნის ბოლოს განახლდა.</p><b>XVIII–XIX საუკუნეები</b></article>
+<article class="monument-card reveal"><span>11 / ქვის ეკლესია</span><h3>ძელი-ცხოველი</h3><p>მაწიმის წყლის ხეობაში მდებარე მცირე ქვის ეკლესიის სახელი ადრინდელი ხის ეკლესიის არსებობაზე მიანიშნებს. სამშენებლო ტექნიკის მიხედვით იგი XIV–XV საუკუნეებით თარიღდება.</p><b>XIV–XV საუკუნეები</b></article>
 </div>
 <div class="monuments-end reveal"><span>1310 / ოთხთავის ანდერძი</span><p>ოთხთავის ანდერძში დაცული სოფლებისა და ეკლესიების სახელები ჰერეთის ძველი საეკლესიო ქსელის აღსადგენად განსაკუთრებულ მნიშვნელობას ატარებს. ძეგლების ზუსტი ისტორიისთვის თითოეული აღწერა სპეციალიზებულ კვლევებთან უნდა შეჯერდეს.</p></div>
 </section>

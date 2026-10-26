@@ -266,120 +266,49 @@
   }
 
 
-    // ========== 3D TILT & DEPTH ==========
-    // Soft 3D tilt on cards following pointer
-    const tiltCards = $$('.term-card, .heritage-card, .mini-card, .kingdom-step');
-    if (tiltCards.length && window.matchMedia('(pointer:fine)').matches) {
-      tiltCards.forEach(card => {
-        card.addEventListener('pointermove', e => {
-          const rect = card.getBoundingClientRect();
-          const x = (e.clientX - rect.left) / rect.width - 0.5;
-          const y = (e.clientY - rect.top) / rect.height - 0.5;
-          gsap.to(card, {
-            rotateY: x * 14,
-            rotateX: -y * 10,
-            transformPerspective: 900,
-            duration: 0.4,
-            ease: 'power2.out',
-            overwrite: true
-          });
-        });
-        card.addEventListener('pointerleave', () => {
-          gsap.to(card, {
-            rotateY: 0,
-            rotateX: 0,
-            duration: 0.7,
-            ease: 'elastic.out(1, 0.5)',
-            overwrite: true
-          });
-        });
-      });
-    }
-
-    // Hero art deeper 3D parallax on pointer
-    const heroArt3d = $('.hero-art');
-    if (heroArt3d && window.matchMedia('(pointer:fine)').matches) {
-      window.addEventListener('pointermove', e => {
-        const x = (e.clientX / window.innerWidth - 0.5) * 18;
-        const y = (e.clientY / window.innerHeight - 0.5) * 12;
-        gsap.to(heroArt3d, {
-          rotateY: x * 0.35,
-          rotateX: -y * 0.25,
-          transformPerspective: 1400,
-          duration: 0.8,
-          ease: 'power2.out',
-          overwrite: 'auto'
-        });
-        // Push ridges at different depths
-        gsap.to('.ridge-back',  { x: x * 0.6, y: y * 0.4, duration: 0.9, ease: 'power2.out', overwrite: 'auto' });
-        gsap.to('.ridge-mid',   { x: x * 1.1, y: y * 0.7, duration: 0.75, ease: 'power2.out', overwrite: 'auto' });
-        gsap.to('.ridge-front', { x: x * 1.6, y: y * 1.0, duration: 0.6, ease: 'power2.out', overwrite: 'auto' });
-        gsap.to('.sun-disc',    { x: x * 0.3, y: y * 0.2, duration: 1.0, ease: 'power2.out', overwrite: 'auto' });
-      }, { passive: true });
-    }
-
-    // Scroll-linked 3D depth for section cards
-    $$('.cinematic-section').forEach(section => {
-      const cards = $$('.term-card, .heritage-card, .mini-card', section);
-      if (cards.length && window.ScrollTrigger) {
-        gsap.fromTo(cards, 
-          { rotateX: 8, z: -40, autoAlpha: 0.7 },
-          { 
-            rotateX: 0, z: 0, autoAlpha: 1, 
-            duration: 1.1, 
-            stagger: 0.08, 
-            ease: 'power3.out',
-            scrollTrigger: { trigger: cards[0], start: 'top 90%', once: true }
-          }
-        );
-      }
-    });
-
-
-  // ========== GLOBE JOURNEY CONTROLS ==========
-  const globeStage = $('#globeStage');
-  if (globeStage) {
-    const layers = $$('.globe-layer', globeStage);
-    const buttons = $$('.globe-btn', globeStage);
-    function setGlobeStep(step) {
-      layers.forEach(l => l.classList.toggle('is-active', Number(l.dataset.step) === step));
-      buttons.forEach(b => b.setAttribute('aria-pressed', String(Number(b.dataset.step) === step)));
-    }
-    setGlobeStep(0);
-    buttons.forEach(btn => {
-      btn.addEventListener('click', () => setGlobeStep(Number(btn.dataset.step)));
-    });
-    // Auto-advance once when section enters view
-    if ('IntersectionObserver' in window && !reducedMotion) {
-      let autoPlayed = false;
-      const globeObs = new IntersectionObserver(entries => {
-        if (entries[0].isIntersecting && !autoPlayed) {
-          autoPlayed = true;
+  // ===== Journey max quality =====
+  const screen = $('#journeyScreen');
+  if (screen) {
+    const layers = $$('.j-layer');
+    const btns = $$('.j-btn');
+    const go = (n) => {
+      layers.forEach(l => l.classList.toggle('on', +l.dataset.step === n));
+      btns.forEach(b => b.setAttribute('aria-current', String(+b.dataset.step === n)));
+    };
+    btns.forEach(b => b.addEventListener('click', () => go(+b.dataset.step)));
+    if (!reducedMotion && 'IntersectionObserver' in window) {
+      let done = false;
+      const o = new IntersectionObserver(e => {
+        if (e[0].isIntersecting && !done) {
+          done = true;
           let s = 0;
-          const iv = setInterval(() => {
-            s++;
-            if (s > 3) { clearInterval(iv); return; }
-            setGlobeStep(s);
-          }, 1600);
+          const t = setInterval(() => { s++; if (s > 3) clearInterval(t); else go(s); }, 1700);
         }
       }, { threshold: 0.4 });
-      globeObs.observe(globeStage);
+      o.observe(screen);
     }
   }
 
-  // ========== MONUMENTS OPEN ON SCROLL ==========
-  const monumentCards = $$('.monument-card');
-  if (monumentCards.length && 'IntersectionObserver' in window) {
-    const monObs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-open');
-          // optional: unobserve after open so it stays open
-          monObs.unobserve(entry.target);
-        }
+  // Monuments open
+  const mons = $$('#monuments article');
+  if (mons.length && 'IntersectionObserver' in window) {
+    const o = new IntersectionObserver(ents => {
+      ents.forEach(e => { if (e.isIntersecting) { e.target.classList.add('is-open'); o.unobserve(e.target); } });
+    }, { threshold: 0.3 });
+    mons.forEach(m => o.observe(m));
+  }
+
+  // Ruler 3D tilt
+  if (!reducedMotion && window.gsap && window.matchMedia('(pointer:fine)').matches) {
+    $$('.ruler').forEach(card => {
+      card.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const x = (e.clientX - r.left) / r.width - 0.5;
+        const y = (e.clientY - r.top) / r.height - 0.5;
+        gsap.to(card, { rotateY: x * 8, rotateX: -y * 6, transformPerspective: 900, duration: 0.35, ease: 'power2.out', overwrite: true });
       });
-    }, { threshold: 0.35, rootMargin: '0px 0px -10% 0px' });
-    monumentCards.forEach(card => monObs.observe(card));
+      card.addEventListener('pointerleave', () => gsap.to(card, { rotateY: 0, rotateX: 0, duration: 0.65, ease: 'elastic.out(1,0.5)', overwrite: true }));
+    });
   }
 
 })();
